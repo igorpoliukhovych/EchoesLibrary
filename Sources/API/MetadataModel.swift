@@ -6,6 +6,7 @@
 //  Copyright © 2019 Echoes. All rights reserved.
 //
 
+import Foundation
 import RealmSwift
 import ObjectMapper
 

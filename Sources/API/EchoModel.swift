@@ -6,6 +6,7 @@
 //  Copyright © 2016 Echoes XYZ. All rights reserved.
 //
 
+import Foundation
 import CoreLocation
 import RealmSwift
 import ObjectMapper
@@ -127,11 +128,11 @@ open class EchoModel: Object, Mappable {
         
         elements <- (map["elements"], ListTransform<ElementModel>())
         //Check old value not from JSON
-        let oldObject = EchoesAPI.shared.getEcho(_id)
-        if oldObject != nil {
-            will_delete = false
-            isDownloaded = oldObject!.isDownloaded
-        }
+//        let oldObject = EchoesAPI.shared.getEcho(_id)
+//        if oldObject != nil {
+//            will_delete = false
+//            isDownloaded = oldObject!.isDownloaded
+//        }
     }
     
     public func getCirclePath() -> [CLLocationCoordinate2D] {

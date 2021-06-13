@@ -6,6 +6,8 @@
 //  Copyright © 2016 Echoes XYZ. All rights reserved.
 //
 
+import CoreLocation
+import Foundation
 import RealmSwift
 import ObjectMapper
 import SwiftyJSON
@@ -74,7 +76,7 @@ open class ElementModel: Object, Mappable {
         return ModelType(rawValue: type) ?? ModelType.none
     }
 
-    var player: EchoesPlayerBase?
+//    var player: EchoesPlayerBase?
     
     var soundPath: URL? {
         get {

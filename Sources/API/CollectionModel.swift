@@ -6,11 +6,11 @@
 //  Copyright © 2016 Echoes XYZ. All rights reserved.
 //
 
+import Foundation
 import CoreLocation
 import RealmSwift
 import ObjectMapper
 import SwiftyJSON
-import Mapbox
 
 public enum DownloadStatus: Int {
     case normal = 0
@@ -132,12 +132,12 @@ public class CollectionModel: Object, Mappable {
     }
     
     private func isLoggedUserSameAs(modelCreator : Map) -> Bool {
-        guard let userId = EchoesAPI.shared.getCurrentUser()?._id else { return false }
-        var creator: UserModel?
-        creator <- modelCreator["creator"]
-        if let unwrappedCreator = creator {
-            return unwrappedCreator._id == userId
-        }
+//        guard let userId = EchoesAPI.shared.getCurrentUser()?._id else { return false }
+//        var creator: UserModel?
+//        creator <- modelCreator["creator"]
+//        if let unwrappedCreator = creator {
+//            return unwrappedCreator._id == userId
+//        }
         return false
     }
     
@@ -260,30 +260,6 @@ public class CollectionModel: Object, Mappable {
         }
         let uniqueUUIDs = Array(Set(uuids))
         return uniqueUUIDs
-    }
-    
-    public func getCoordinateBounds() -> MGLCoordinateBounds {
-        var coordinates: [CLLocationCoordinate2D] = []
-        for echo in self.echoes {
-            coordinates.append(contentsOf: echo.getPolygonCoordsForCircleOrPolygon())
-        }
-        var sw = CLLocationCoordinate2D(latitude: coordinates[0].latitude, longitude: coordinates[0].longitude)
-        var ne = CLLocationCoordinate2D(latitude: coordinates[0].latitude, longitude: coordinates[0].longitude)
-        for coordinate in coordinates {
-            if coordinate.latitude < sw.latitude {
-                sw.latitude = coordinate.latitude
-            }
-            if coordinate.longitude < sw.longitude {
-                sw.longitude = coordinate.longitude
-            }
-            if coordinate.latitude > ne.latitude {
-                ne.latitude = coordinate.latitude
-            }
-            if coordinate.longitude > ne.longitude {
-                ne.longitude = coordinate.longitude
-            }
-        }
-        return MGLCoordinateBounds(sw: sw, ne: ne)
     }
     
 }

@@ -6,6 +6,7 @@
 //  Copyright (c) 2017 Echoes. All rights reserved.
 //
 
+import Foundation
 import RealmSwift
 import ObjectMapper
 import SwiftyJSON

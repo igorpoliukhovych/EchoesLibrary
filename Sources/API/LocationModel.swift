@@ -6,6 +6,7 @@
 //  Copyright © 2020 Echoes. All rights reserved.
 //
 
+import Foundation
 import ObjectMapper
 
 final class LocationModel: Mappable {
