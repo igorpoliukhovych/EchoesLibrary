@@ -15,7 +15,7 @@ open class LocationModel: Mappable {
     public var placeName: String!
     public var geometry: Geometry!
     
-    convenience init?(map: Map) {
+    required public convenience init?(map: Map) {
         self.init()
     }
     
@@ -29,14 +29,14 @@ open class LocationModel: Mappable {
 
 open class Geometry: Mappable {
     
-    var type: String!
-    var coordinates: Array<Double>!
+    public var type: String!
+    public var coordinates: Array<Double>!
     
-    convenience init?(map: Map) {
+    required public convenience init?(map: Map) {
         self.init()
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         type <- map["type"]
         coordinates <- map["coordinates"]
     }
