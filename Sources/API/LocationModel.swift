@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-final class LocationModel: Mappable {
+open class LocationModel: Mappable {
     
     public var text: String!
     public var placeName: String!
@@ -27,7 +27,7 @@ final class LocationModel: Mappable {
     
 }
 
-final class Geometry: Mappable {
+open class Geometry: Mappable {
     
     var type: String!
     var coordinates: Array<Double>!

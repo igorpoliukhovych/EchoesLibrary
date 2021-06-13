@@ -10,10 +10,10 @@ import Foundation
 import RealmSwift
 import ObjectMapper
 
-open class DescriptionModel: Object, Mappable {
+public class DescriptionModel: Object, Mappable {
     @objc public dynamic var _id = String.randomString(length: 12)
-    @objc dynamic var lang:String = ""
-    @objc dynamic var text:String = ""
+    @objc public dynamic var lang:String = ""
+    @objc public dynamic var text:String = ""
     
     override public static func primaryKey() -> String? {
         return "_id"

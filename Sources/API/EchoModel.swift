@@ -12,7 +12,7 @@ import RealmSwift
 import ObjectMapper
 import SwiftyJSON
 
-open class EchoModel: Object, Mappable {
+public class EchoModel: Object, Mappable {
     @objc public dynamic var _id = ""
     
     public var title = List<DescriptionModel>()
