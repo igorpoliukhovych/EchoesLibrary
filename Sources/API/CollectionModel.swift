@@ -19,7 +19,7 @@ public enum DownloadStatus: Int {
     case error
 }
 
-open class CollectionModel: Object, Mappable {
+public class CollectionModel: Object, Mappable {
     @objc public dynamic var _id = ""
     
     var title = List<DescriptionModel>()
