@@ -29,7 +29,7 @@ open class PurchaseModel: Object, Mappable {
                 "type": type]
     }
     
-    convenience init(sku : String) {
+    public required convenience init(sku : String) {
         self.init()
         self.sku = sku
     }
