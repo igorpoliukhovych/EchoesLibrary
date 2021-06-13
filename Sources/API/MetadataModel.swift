@@ -12,9 +12,9 @@ import ObjectMapper
 
 open class MetadataModel: Object, Mappable {
     @objc public dynamic var _id = String.randomString(length: 12)
-    @objc dynamic var rel:String = ""
-    @objc dynamic var lang:String = "en"
-    @objc dynamic var text:String = ""
+    @objc public dynamic var rel:String = ""
+    @objc public dynamic var lang:String = "en"
+    @objc public dynamic var text:String = ""
     
     override public static func primaryKey() -> String? {
         return "_id"

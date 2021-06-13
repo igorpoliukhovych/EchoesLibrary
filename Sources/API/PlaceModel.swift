@@ -13,9 +13,9 @@ import SwiftyJSON
 
 open class PlaceModel: Object, Mappable {
     @objc public dynamic var _id = String.randomString(length: 12)
-    @objc dynamic var lang: String?
-    @objc dynamic var short_name: String?
-    @objc dynamic var long_name: String?
+    @objc public dynamic var lang: String?
+    @objc public dynamic var short_name: String?
+    @objc public dynamic var long_name: String?
     
     required public convenience init?(map: Map) {
         self.init()

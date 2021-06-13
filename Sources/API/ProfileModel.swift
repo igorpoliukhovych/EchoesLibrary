@@ -13,26 +13,26 @@ import SwiftyJSON
 
 open class ProfileModel: Object, Mappable {
     
-    @objc dynamic var active: String = ""
-    @objc dynamic var _id: String = ""
-    @objc dynamic var name: String = ""
-    var descriptionProfile = List<ProfileDescriptionModel>()
-    @objc dynamic var pub_status: String = ""
-    @objc dynamic var slug: String = ""
-    @objc dynamic var creation_date: NSDate = NSDate()
-    @objc dynamic var updated_at: NSDate = NSDate()
-    @objc dynamic var v: String = ""
-    @objc dynamic var totalCount: Int = 0
-    @objc dynamic var num_public_collections: Int = 0
-    var media = List<MediaModel>()
+    @objc public dynamic var active: String = ""
+    @objc public dynamic var _id: String = ""
+    @objc public dynamic var name: String = ""
+    public var descriptionProfile = List<ProfileDescriptionModel>()
+    @objc public dynamic var pub_status: String = ""
+    @objc public dynamic var slug: String = ""
+    @objc public dynamic var creation_date: NSDate = NSDate()
+    @objc public dynamic var updated_at: NSDate = NSDate()
+    @objc public dynamic var v: String = ""
+    @objc public dynamic var totalCount: Int = 0
+    @objc public dynamic var num_public_collections: Int = 0
+    public var media = List<MediaModel>()
     
-    var profileHref: String {
+    public var profileHref: String {
         get {
             return Helper.getMediaProperty(media: self.media, for: "profile-photo")
         }
     }
     
-    var coverHref: String {
+    public var coverHref: String {
         get {
             return Helper.getMediaProperty(media: self.media)
         }
@@ -68,9 +68,9 @@ open class ProfileModel: Object, Mappable {
 
 open class ProfileDescriptionModel: Object, Mappable {
     
-    @objc dynamic var lang: String = ""
-    @objc dynamic var _id: String = ""
-    @objc dynamic var text: String = ""
+    @objc public dynamic var lang: String = ""
+    @objc public dynamic var _id: String = ""
+    @objc public dynamic var text: String = ""
     
     required convenience public init?(map: Map) {
         self.init()

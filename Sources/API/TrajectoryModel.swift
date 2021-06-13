@@ -14,8 +14,8 @@ import CoreLocation
 
 open class TrajectoryModel: Object, Mappable {
     @objc public dynamic var _id = String.randomString(length: 12)
-    var title = List<DescriptionModel>()
-    var desc = List<DescriptionModel>()
+    public var title = List<DescriptionModel>()
+    public var desc = List<DescriptionModel>()
     @objc public dynamic var trajectory = ""
     @objc public dynamic var length = 0.0
     @objc public dynamic var duration = 0.0
@@ -43,19 +43,19 @@ open class TrajectoryModel: Object, Mappable {
         pub_status <- map["pub_status"]
     }
     
-    var titleText:String {
+    public var titleText:String {
         get {
             return Helper.i18nise(self.title)
         }
     }
     
-    var descriptionText: String {
+    public var descriptionText: String {
         get {
             return Helper.i18nise(self.desc)
         }
     }
     
-    var coordinates: [CLLocationCoordinate2D] {
+    public var coordinates: [CLLocationCoordinate2D] {
         get {
             guard let traj = self.trajectory.convertStringToJSON() else { return [] }
             let trajCoords = traj.arrayValue

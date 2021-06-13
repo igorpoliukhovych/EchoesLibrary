@@ -13,10 +13,10 @@ import SwiftyJSON
 
 open class MediaModel: Object, Mappable {
     
-    @objc dynamic var id: String?
-    @objc dynamic var rel: String?
-    @objc dynamic var href: String?
-    @objc dynamic var type: String?
+    @objc public dynamic var id: String?
+    @objc public dynamic var rel: String?
+    @objc public dynamic var href: String?
+    @objc public dynamic var type: String?
     
     @objc public dynamic var imageData = Data()
     

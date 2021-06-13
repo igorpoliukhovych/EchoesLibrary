@@ -11,15 +11,15 @@ import ObjectMapper
 
 final class LocationModel: Mappable {
     
-    var text: String!
-    var placeName: String!
-    var geometry: Geometry!
+    public var text: String!
+    public var placeName: String!
+    public var geometry: Geometry!
     
     convenience init?(map: Map) {
         self.init()
     }
     
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         text <- map["text"]
         placeName <- map["place_name"]
         geometry <- map["geometry"]

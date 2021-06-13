@@ -14,7 +14,7 @@ public class CustomDateFormatterTransform: TransformType {
     public typealias Object = NSDate
     public typealias JSON = String
     
-    let dateFormatter: DateFormatter
+    public let dateFormatter: DateFormatter
     
     public init(dateFormatterFormat: String) {
         let df = DateFormatter()

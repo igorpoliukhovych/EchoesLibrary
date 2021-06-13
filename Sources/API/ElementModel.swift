@@ -72,7 +72,7 @@ open class ElementModel: Object, Mappable {
     @objc dynamic var downloadStatusEnum = 0
     @objc dynamic var downloadProgress: Double = 0.0
     
-    var modelDataType: ModelType {
+    public var modelDataType: ModelType {
         return ModelType(rawValue: type) ?? ModelType.none
     }
 
@@ -96,19 +96,19 @@ open class ElementModel: Object, Mappable {
         }
     }
     
-    var is3d: Bool {
+    public var is3d: Bool {
         get {
             return type == "ambisonic" || threed
         }
     }
     
-    var needsFmod: Bool {
+    public var needsFmod: Bool {
         get {
             return type == "ambisonic" || threed || sync_group > -1 || soundPath?.pathExtension ?? "" == "ogg"
         }
     }
     
-    var downloadStatus: ElementDownloadStatus {
+    public var downloadStatus: ElementDownloadStatus {
         get {
             return ElementDownloadStatus(rawValue: self.downloadStatusEnum)!
         }
@@ -117,7 +117,7 @@ open class ElementModel: Object, Mappable {
         }
     }
     
-    var coords: CLLocationCoordinate2D? {
+    public var coords: CLLocationCoordinate2D? {
         get {
             let location = loc.convertStringToJSON()
             if location == nil {
@@ -131,7 +131,7 @@ open class ElementModel: Object, Mappable {
         }
     }
     
-    var isNotSound: Bool {
+    public var isNotSound: Bool {
         get {
             if self.type != "sound" && self.type != "ambisonic" {
                 return true

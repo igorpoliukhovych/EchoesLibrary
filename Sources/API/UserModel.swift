@@ -18,21 +18,21 @@ open class UserModel: Object, Mappable {
     @objc public dynamic var name = ""
     @objc public dynamic var slug = ""
     @objc public dynamic var desc = ""
-    var media = List<MediaModel>()
+    public var media = List<MediaModel>()
     @objc public dynamic var reg_date = NSDate()
     @objc public dynamic var last_login_date = NSDate()
-    var purchases = List<PurchaseModel>()
+    public var purchases = List<PurchaseModel>()
     @objc public dynamic var loggedin = false
     @objc public dynamic var seenOnboarding = false
     @objc public dynamic var firebase_token = ""
     
-    var coverHref: String {
+    public var coverHref: String {
         get {
             return Helper.getMediaProperty(media: self.media)
         }
     }
     
-    var purchasesParameters: [String: Any] {
+    public var purchasesParameters: [String: Any] {
         var params: [String: Any] = [:]
         var objArray: [Any] = []
         purchases.forEach { objArray.append($0.asParams) }

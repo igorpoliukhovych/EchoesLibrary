@@ -13,9 +13,9 @@ import SwiftyJSON
 
 open class OnboardingModel: Object, Mappable {
     @objc public dynamic var _id = String.randomString(length: 12)
-    var title = List<DescriptionModel>()
-    var desc = List<DescriptionModel>()
-    var media = List<MediaModel>()
+    public var title = List<DescriptionModel>()
+    public var desc = List<DescriptionModel>()
+    public var media = List<MediaModel>()
     
     override public static func primaryKey() -> String? {
         return "_id"
@@ -36,19 +36,19 @@ open class OnboardingModel: Object, Mappable {
         media <- (map ["media"], ListTransform<MediaModel>())
     }
     
-    var titleText:String {
+    public var titleText:String {
         get {
             return Helper.i18nise(self.title)
         }
     }
     
-    var descriptionText: String {
+    public var descriptionText: String {
         get {
             return Helper.i18nise(self.desc)
         }
     }
     
-    var coverHref: String {
+    public var coverHref: String {
         get {
             return Helper.getMediaProperty(media: self.media)
         }

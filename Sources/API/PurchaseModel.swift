@@ -20,11 +20,11 @@ open class PurchaseModel: Object, Mappable {
     @objc public dynamic var _id = ""
     @objc public dynamic var datePurchased = NSDate()
     
-    var productId: ProductIdentifier {
+    public var productId: ProductIdentifier {
         return sku
     }
     
-    var asParams: [String: String] {
+    public var asParams: [String: String] {
         return ["sku" : sku,
                 "type": type]
     }
