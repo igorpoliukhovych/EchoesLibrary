@@ -26,51 +26,51 @@ public enum ElementDownloadStatus: Int {
 }
 
 open class ElementModel: Object, Mappable {
-    @objc dynamic var _id: String = ""
-    @objc dynamic var echo_id: String = ""
-    @objc dynamic var owner: String = ""
-    @objc dynamic var type: String = ""
+    @objc public dynamic var _id: String = ""
+    @objc public dynamic var echo_id: String = ""
+    @objc public dynamic var owner: String = ""
+    @objc public dynamic var type: String = ""
     
-    @objc dynamic var play_loop: Bool = false
-    @objc dynamic var play_once: Bool = false
-    @objc dynamic var play_complete: Bool = false
-    @objc dynamic var spatialization: Bool = false
-    @objc dynamic var threed: Bool = false
-    @objc dynamic var resume: Bool = false
+    @objc public dynamic var play_loop: Bool = false
+    @objc public dynamic var play_once: Bool = false
+    @objc public dynamic var play_complete: Bool = false
+    @objc public dynamic var spatialization: Bool = false
+    @objc public dynamic var threed: Bool = false
+    @objc public dynamic var resume: Bool = false
     
-    @objc dynamic var threed_min_dist: Float = 0.0
-    @objc dynamic var threed_max_dist: Float = 20.0
-    @objc dynamic var threed_rolloff: String = "inverse"
-    @objc dynamic var relative_elevation: Float = 0.0
+    @objc public dynamic var threed_min_dist: Float = 0.0
+    @objc public dynamic var threed_max_dist: Float = 20.0
+    @objc public dynamic var threed_rolloff: String = "inverse"
+    @objc public dynamic var relative_elevation: Float = 0.0
     
-    @objc dynamic var fade_in_ms: Int = 0
-    @objc dynamic var fade_out_ms: Int = 500
+    @objc public dynamic var fade_in_ms: Int = 0
+    @objc public dynamic var fade_out_ms: Int = 500
     
-    @objc dynamic var loc: String = ""
+    @objc public dynamic var loc: String = ""
     
     @objc public dynamic var tempo: Float = 120
     @objc public dynamic var sync_beats: Int = 4
     @objc public dynamic var sync_group: Int = -1
     
-    @objc dynamic var pub_status: String = ""
+    @objc public dynamic var pub_status: String = ""
     
-    @objc dynamic var media_href = ""
-    @objc dynamic var media_rel = ""
+    @objc public dynamic var media_href = ""
+    @objc public dynamic var media_rel = ""
     
-    @objc dynamic var updated_at: NSDate = NSDate()
-    @objc dynamic var creation_date: NSDate = NSDate()
+    @objc public dynamic var updated_at: NSDate = NSDate()
+    @objc public dynamic var creation_date: NSDate = NSDate()
     
-    @objc dynamic var slug: String = ""
-    @objc dynamic var title: String = ""
-    @objc dynamic var desc: String = ""
+    @objc public dynamic var slug: String = ""
+    @objc public dynamic var title: String = ""
+    @objc public dynamic var desc: String = ""
     
-    @objc dynamic var size_bytes = 0
+    @objc public dynamic var size_bytes = 0
     
-    @objc dynamic var localPath: String = ""
-    @objc dynamic var will_delete: Bool = false
+    @objc public dynamic var localPath: String = ""
+    @objc public dynamic var will_delete: Bool = false
     
-    @objc dynamic var downloadStatusEnum = 0
-    @objc dynamic var downloadProgress: Double = 0.0
+    @objc public dynamic var downloadStatusEnum = 0
+    @objc public dynamic var downloadProgress: Double = 0.0
     
     public var modelDataType: ModelType {
         return ModelType(rawValue: type) ?? ModelType.none
@@ -78,7 +78,7 @@ open class ElementModel: Object, Mappable {
 
 //    var player: EchoesPlayerBase?
     
-    var soundPath: URL? {
+    public var soundPath: URL? {
         get {
             if self.localPath != "" {
                 let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
