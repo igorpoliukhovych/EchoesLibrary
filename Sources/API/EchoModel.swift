@@ -15,8 +15,8 @@ import SwiftyJSON
 open class EchoModel: Object, Mappable {
     @objc public dynamic var _id = ""
     
-    var title = List<DescriptionModel>()
-    var desc = List<DescriptionModel>()
+    public var title = List<DescriptionModel>()
+    public var desc = List<DescriptionModel>()
     @objc public dynamic var slug = ""
     
     @objc public dynamic var owner = ""
@@ -26,7 +26,7 @@ open class EchoModel: Object, Mappable {
     
     @objc public dynamic var collection_id = ""
     @objc public dynamic var radius = 0.0
-    var media = List<MediaModel>()
+    public var media = List<MediaModel>()
     @objc public dynamic var tags = ""
     @objc public dynamic var polygon = ""
     @objc public dynamic var loc = ""
@@ -37,11 +37,11 @@ open class EchoModel: Object, Mappable {
     @objc public dynamic var updated_at = NSDate()
     @objc public dynamic var creation_date = NSDate()
     @objc public dynamic var imageData = Data()
-    var metadata = List<MetadataModel>()
+    public var metadata = List<MetadataModel>()
     
     @objc public dynamic var localCoverPath:String = ""
     @objc public dynamic var isDownloaded = false
-    var elements = List<ElementModel>()
+    public var elements = List<ElementModel>()
     @objc public dynamic var lat: Float = 0.0
     @objc public dynamic var lng: Float = 0.0
     
@@ -57,19 +57,19 @@ open class EchoModel: Object, Mappable {
     
     @objc dynamic var will_delete = false
     
-    let collections = LinkingObjects(fromType: CollectionModel.self, property: "echoes")
+    public let collections = LinkingObjects(fromType: CollectionModel.self, property: "echoes")
     
-    var titleText: String {
+    public var titleText: String {
         get {
             return Helper.i18nise(self.title)
         }
     }
-    var descriptionText: String {
+    public var descriptionText: String {
         get {
             return Helper.i18nise(self.desc)
         }
     }
-    var coverHref: String {
+    public var coverHref: String {
         get {
             guard localCoverPath != "" else {
                 return Helper.getMediaProperty(media: self.media)

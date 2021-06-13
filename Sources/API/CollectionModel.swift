@@ -22,8 +22,8 @@ public enum DownloadStatus: Int {
 public class CollectionModel: Object, Mappable {
     @objc public dynamic var _id = ""
     
-    var title = List<DescriptionModel>()
-    var desc = List<DescriptionModel>()
+    public var title = List<DescriptionModel>()
+    public var desc = List<DescriptionModel>()
     @objc public dynamic var slug = ""
     
     @objc public dynamic var loc = ""
@@ -38,8 +38,8 @@ public class CollectionModel: Object, Mappable {
     public var categories = List<String>()
     public var views = List<String>()
     
-    var media = List<MediaModel>()
-    var echoes = List<EchoModel>()
+    public var media = List<MediaModel>()
+    public var echoes = List<EchoModel>()
     @objc public dynamic var creator: UserModel? = nil
     public var place = List<PlaceModel>()
     public var onboarding = List<OnboardingModel>()
@@ -63,14 +63,14 @@ public class CollectionModel: Object, Mappable {
     
     public var profiles = List<ProfileModel>()
     
-    var getPrice: String? {
+    public var getPrice: String? {
         get {
             return String.numberFormatter.string(from: NSDecimalNumber(floatLiteral: Double(price)))
         }
     }
     
     private var _totalSizeBytes: Int?
-    var totalSizeBytes: Int {
+    public var totalSizeBytes: Int {
         get {
             if _totalSizeBytes != nil {
                 return _totalSizeBytes!
@@ -82,13 +82,13 @@ public class CollectionModel: Object, Mappable {
             return sizeBytes
         }
     }
-    var totalSizeBytesFormatted: String {
+    public var totalSizeBytesFormatted: String {
         get {
             return ByteCountFormatter.string(fromByteCount: Int64(totalSizeBytes), countStyle: .file)
         }
     }
     
-    var forSale: Bool {
+    public var forSale: Bool {
         get {
             var forSale = self.sell && self.appleSku != ""
             
@@ -100,29 +100,29 @@ public class CollectionModel: Object, Mappable {
         }
     }
     
-    var titleText: String {
+    public var titleText: String {
         get {
             return Helper.i18nise(self.title)
         }
     }
-    var descriptionText: String {
+    public var descriptionText: String {
         get {
             return Helper.i18nise(self.desc)
         }
     }
-    var coverHref: String {
+    public var coverHref: String {
         get {
             return Helper.getMediaProperty(media: self.media)
         }
     }
     
-    var introHref: String {
+    public var introHref: String {
         get {
             return Helper.getMediaProperty(media: self.media, for: "intro")
         }
     }
     
-    var placeShortNameText: String {
+    public var placeShortNameText: String {
         get {
             if let i18nisedPlace = self.place.first(where: { $0.lang?.lowercased() == Locale.current.languageCode?.lowercased() }) {
                 return i18nisedPlace.short_name ?? ""
@@ -141,7 +141,7 @@ public class CollectionModel: Object, Mappable {
         return false
     }
     
-    var downloadStatus: DownloadStatus {
+    public var downloadStatus: DownloadStatus {
         get {
             return DownloadStatus(rawValue: self.cstatus)!
         }
@@ -150,7 +150,7 @@ public class CollectionModel: Object, Mappable {
         }
     }
     
-    var centreCoords: CLLocationCoordinate2D? {
+    public var centreCoords: CLLocationCoordinate2D? {
         get {
             let data = self.loc.data(using: String.Encoding.utf8)!
             do {
